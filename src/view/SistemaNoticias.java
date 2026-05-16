@@ -49,6 +49,9 @@ public class SistemaNoticias {
 					 case 4:
 						System.out.println("Fechando sistema...");
 						break;
+					 default:
+						 System.out.println("Numero não possui funcionalidade.");
+						 break;
 					}
 				} 
 				//captura o erro de tipo de variável sem quebrar o loop
