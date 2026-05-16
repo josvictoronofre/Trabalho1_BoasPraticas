@@ -19,7 +19,7 @@ public class SistemaNoticias {
 			System.out.println("1. Adicionar manual");
 			System.out.println("2. Adicionar automatico");
 			System.out.println("3. Listar");
-			System.out.println("4 Sair");
+			System.out.println("4. Sair");
 				
 				try {
 					opcao = scanner.nextInt();
