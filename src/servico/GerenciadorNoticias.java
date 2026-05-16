@@ -12,22 +12,18 @@ public class GerenciadorNoticias {
 		
 		//evita tentar adicionar objetos ou textos vazios ou nulos
 		if (noticia != null && noticia.getTexto() != null && !noticia.getTexto().isBlank()) {
-			repositorio.add(noticia);
-		} else {
-			System.out.println("Erro: Texto inválido!");
-		}
+			if (noticia.getClassificacao() == null || noticia.getClassificacao().isEmpty()) {
+				this.gerarClassificacaoAutomatica(noticia);
+				repositorio.add(noticia);
+			} else repositorio.add(noticia);
+		} else System.out.println("Erro: Texto inválido!");
 	}
 	
-	public void listar() {
-		if (repositorio.isEmpty()) {
-			System.out.println("Nenhum registro encontrado");
-			return;
-		}
-		for (Noticia noticia : repositorio) {
-			System.out.println(noticia);
-		}
+	public List<Noticia> getTodasNoticias() {
+		return repositorio;
 	}
 	
+	//O sistema de pontuacao continua o mesmo
 	public void gerarClassificacaoAutomatica(Noticia noticia) {
 		int pontuacao = 0;
 		

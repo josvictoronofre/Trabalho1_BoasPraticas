@@ -6,7 +6,26 @@ public class Noticia {
 	
 	public Noticia(String texto, String classificacao) {
 		this.texto = texto;
-		this.classificacao = (classificacao == null || classificacao.isEmpty() ? "duvidosa" : classificacao);
+		String classeTratada = (classificacao == null) ? "" : classificacao.trim().toLowerCase();
+		
+		switch (classeTratada) {
+		 case "confiavel":
+			 this.classificacao = classeTratada;
+			 break;
+		 case "falsa":
+			 this.classificacao = classeTratada;
+			 break;
+		 case "duvidosa":
+			 this.classificacao = classeTratada;
+			 break;
+		default:
+			this.classificacao = "";
+			break;
+		}
+	}
+	
+	public Noticia (String texto) {
+		this.texto = texto;
 	}
 	
 	public String getTexto() {
@@ -27,6 +46,6 @@ public class Noticia {
 	
 	@Override
 	public String toString() {
-		return "Texto: " + texto + "\nClassificacao: " + classificacao;
+		return "Texto: " + texto + "\nClassificacao: " + classificacao + "\n";
 	}
 }
