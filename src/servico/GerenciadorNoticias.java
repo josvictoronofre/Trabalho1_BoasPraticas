@@ -14,8 +14,8 @@ public class GerenciadorNoticias {
 		if (noticia != null && noticia.getTexto() != null && !noticia.getTexto().isBlank()) {
 			if (noticia.getClassificacao() == null || noticia.getClassificacao().isEmpty()) {
 				this.gerarClassificacaoAutomatica(noticia);
-				repositorio.add(noticia);
-			} else repositorio.add(noticia);
+			}
+			repositorio.add(noticia);
 		} else System.out.println("Erro: Texto inválido!");
 	}
 	
