@@ -31,6 +31,7 @@ public class GerenciadorNoticias {
 		if (!noticia.getTexto().contains("FONTE")) pontuacao++;
 		if (noticia.getTexto().contains("!!!")) pontuacao++;
 		if (noticia.getTexto().contains("URGENTE")) pontuacao++;
+		if (noticia.getTexto().length() > 10) pontuacao++;
 		
 		if (pontuacao == 0) noticia.setClassificacao("confiavel");
 		else if (pontuacao == 1) noticia.setClassificacao("duvidosa");
