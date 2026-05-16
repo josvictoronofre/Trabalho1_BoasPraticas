@@ -32,6 +32,7 @@ public class SistemaNoticias {
 						System.out.print("Digite a classificacao: ");
 						String classificacao = scanner.nextLine();
 						gerenciador.adicionar(new Noticia(texto, classificacao));
+						// Travas de interrupção contra fall-through
 						break;
 					 }
 					 case 2: {
