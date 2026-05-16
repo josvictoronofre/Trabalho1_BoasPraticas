@@ -44,6 +44,7 @@ public class Noticia {
 		this.classificacao = classificacao;
 	}
 	
+	//polimorfismo ajuda a simplificar a passagem de dados pro usuario
 	@Override
 	public String toString() {
 		return "Texto: " + texto + "\nClassificacao: " + classificacao + "\n";

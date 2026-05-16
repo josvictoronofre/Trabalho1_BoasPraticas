@@ -26,8 +26,9 @@ public class SistemaNoticias {
 					switch (opcao) {
 					 case 1: {
 						System.out.print("Digite o texto: ");
+						// Limpeza preventiva do buffer do teclado (usado múltiplas vezes no código
 						scanner.nextLine();
-						String texto = scanner.nextLine();
+						String texto = scanner.nextLine(); 
 						System.out.print("Digite a classificacao: ");
 						String classificacao = scanner.nextLine();
 						gerenciador.adicionar(new Noticia(texto, classificacao));
@@ -46,11 +47,14 @@ public class SistemaNoticias {
 						}
 						break;
 					 case 4:
+						System.out.println("Fechando sistema...");
 						break;
 					}
-				} catch (InputMismatchException e) {
+				} 
+				//captura o erro de tipo de variável
+				catch (InputMismatchException e) {
 					System.err.println("Erro! valor inserido invalido para o campo!");
-					scanner.nextLine();
+					scanner.nextLine(); 
 				}
 		}
 		scanner.close();

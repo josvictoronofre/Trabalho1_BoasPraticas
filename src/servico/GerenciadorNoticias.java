@@ -19,11 +19,12 @@ public class GerenciadorNoticias {
 		} else System.out.println("Erro: Texto inválido!");
 	}
 	
+	//retorna o valor dos objetos sem dar acesso indevido às variáveis
 	public List<Noticia> getTodasNoticias() {
 		return repositorio;
 	}
 	
-	//O sistema de pontuacao continua o mesmo
+	//O sistema de pontuação continua o mesmo
 	public void gerarClassificacaoAutomatica(Noticia noticia) {
 		int pontuacao = 0;
 		
